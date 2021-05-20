@@ -14,5 +14,6 @@ public class Education {
     private String career;
     private LocalDate from;
     private LocalDate to;
+    private Boolean forever;
     private String degree;
 }
