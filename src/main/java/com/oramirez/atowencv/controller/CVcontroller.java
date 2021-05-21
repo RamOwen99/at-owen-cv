@@ -22,6 +22,12 @@ public class CVcontroller {
         return cVservice.getAllCVs();
     }
 
+    @GetMapping(value = "/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public CVmodel getCVbyId(@PathVariable String id) {
+        return cVservice.getCVbyId(id);
+    }
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(value = "/cv", consumes = "application/json", produces = "application/json")
     public PostResponse createNewCV(@RequestBody CVmodel request) {
