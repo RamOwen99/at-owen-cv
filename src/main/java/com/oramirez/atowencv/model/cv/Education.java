@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -12,7 +12,7 @@ import java.time.LocalDate;
 public class Education {
     private String name;
     private String career;
-    private LocalDate from;
-    private LocalDate to;
+    private Date from;
+    private Date to;
     private String degree;
 }

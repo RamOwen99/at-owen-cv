@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -12,8 +12,8 @@ import java.time.LocalDate;
 public class WorkExperience {
     private String title;
     private String company;
-    private LocalDate from;
-    private LocalDate to;
+    private Date from;
+    private Date to;
     private Boolean current;
     private String description;
 }
