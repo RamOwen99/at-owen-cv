@@ -24,9 +24,8 @@ public class CVmodel {
     private String phoneNumber;
     private List<Skills> skills;
     private List<Languages> languages;
-    private List<WorkExperience> workexperience;
+    private List<WorkExperience> workExperience;
     private List<Education> education;
-    private List<Challenges> challenges;
     private SocialMedia socialMedia;
-    private Config config;
+    private List<Challenges> challenges;
 }
