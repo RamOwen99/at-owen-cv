@@ -8,4 +8,5 @@ import java.util.List;
 public interface CVservice {
     List<CVmodel> getAllCVs();
     PostResponse createNewCV(CVmodel request);
+    CVmodel getCVbyId(String id);
 }
