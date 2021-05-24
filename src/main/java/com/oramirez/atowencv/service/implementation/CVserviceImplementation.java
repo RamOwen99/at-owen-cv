@@ -41,9 +41,7 @@ public class CVserviceImplementation implements CVservice {
 
     @Override
     public PostResponse createNewCV(CVmodel request) {
-        System.out.println("The request -> " + request);
         CVmodel saveNewCV = cVrepository.save(request);
-        System.out.println("Saved = " + saveNewCV);
         return new PostResponse(saveNewCV.getId());
     }
 
