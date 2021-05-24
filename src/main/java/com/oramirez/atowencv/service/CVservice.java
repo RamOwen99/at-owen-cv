@@ -9,4 +9,5 @@ public interface CVservice {
     List<CVmodel> getAllCVs();
     PostResponse createNewCV(CVmodel request);
     CVmodel getCVbyId(String id);
+    CVmodel updateCVwithAnId(CVmodel cv, String id);
 }

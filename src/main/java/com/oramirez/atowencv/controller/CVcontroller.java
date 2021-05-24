@@ -33,4 +33,10 @@ public class CVcontroller {
     public PostResponse createNewCV(@RequestBody CVmodel request) {
         return cVservice.createNewCV(request);
     }
+
+    @PutMapping(value = "/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public CVmodel updateCVwithAnId(@RequestBody CVmodel cv, @PathVariable String id) {
+        return cVservice.updateCVwithAnId(cv, id);
+    }
 }
