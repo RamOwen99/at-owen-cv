@@ -9,6 +9,7 @@ import static com.oramirez.atowencv.validation.ValUtils.*;
 import static com.oramirez.atowencv.exception.ExceptionMessages.*;
 import static com.oramirez.atowencv.enums.CVfields.*;
 
+@Service
 public class ValidatePersonalData implements Validate<CVmodel> {
 
     @Override
@@ -81,7 +82,7 @@ public class ValidatePersonalData implements Validate<CVmodel> {
         if(!isValidEmail(email)) {
             throw new BadRequestException(
                 String.format(
-                    INVALID_FIELD.getMessageException(),
+                    INVALID_EMAIL_FORMAT.getMessageException(),
                     EMAIL.getFieldName()
                 )
             );
@@ -92,7 +93,7 @@ public class ValidatePersonalData implements Validate<CVmodel> {
         if(!isValidPhoneNumber(phoneNumber)) {
             throw new BadRequestException(
                 String.format(
-                    INVALID_FIELD.getMessageException(),
+                    INVALID_PHONE_NUMBER.getMessageException(),
                     PHONE_NUMBER.getFieldName()
                 )
             );
