@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/at-owen-cv")
+@RequestMapping(value = "/at-owen-cv/cvs")
 public class CVcontroller {
 
     @Autowired
@@ -29,7 +29,7 @@ public class CVcontroller {
     }
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping(value = "/cv", consumes = "application/json", produces = "application/json")
+    @PostMapping(consumes = "application/json", produces = "application/json")
     public PostResponse createNewCV(@RequestBody CVmodel request) {
         return cVservice.createNewCV(request);
     }
