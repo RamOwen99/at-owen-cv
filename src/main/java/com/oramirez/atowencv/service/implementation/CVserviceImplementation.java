@@ -5,6 +5,7 @@ import com.oramirez.atowencv.model.cv.CVmodel;
 import com.oramirez.atowencv.model.response.PostResponse;
 import com.oramirez.atowencv.repository.CVrepository;
 import com.oramirez.atowencv.service.CVservice;
+import com.oramirez.atowencv.validation.personalData.ValidatePersonalData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,9 @@ public class CVserviceImplementation implements CVservice {
 
     @Autowired
     private CVrepository cVrepository;
+
+    @Autowired
+    private ValidatePersonalData validatePersonalData;
 
     @Override
     public List<CVmodel> getAllCVs() {
@@ -41,6 +45,7 @@ public class CVserviceImplementation implements CVservice {
 
     @Override
     public PostResponse createNewCV(CVmodel request) {
+        validatePersonalData.validate(request);
         CVmodel saveNewCV = cVrepository.save(request);
         return new PostResponse(saveNewCV.getId());
     }
