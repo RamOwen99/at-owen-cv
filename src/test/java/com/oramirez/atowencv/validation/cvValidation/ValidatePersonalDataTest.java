@@ -1,8 +1,8 @@
-package com.oramirez.atowencv.validation.personalData;
+package com.oramirez.atowencv.validation.cvValidation;
 
 import com.oramirez.atowencv.exception.BadRequestException;
 import com.oramirez.atowencv.model.cv.CVmodel;
-import org.junit.jupiter.api.BeforeAll;
+import com.oramirez.atowencv.validation.cvValidation.ValidatePersonalData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
