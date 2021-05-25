@@ -6,8 +6,10 @@ public enum ExceptionMessages {
 
     // Messages when a field is invalid
     INVALID_FIELD("The field %s is not valid"),
-    INVALID_EMAIL_FORMAT("The %s does not have the correct format. Try with this format \"example@domain.com\""),
-    INVALID_PHONE_NUMBER("The %s is not valid because it is not a phone number");
+    INVALID_EMAIL_FORMAT("The %s does not have the correct format. Try with this format 'example@domain.com'"),
+    INVALID_PHONE_NUMBER("The %s is not valid because it is not a phone number"),
+    INVALID_TECHNICAL_LANGUAGE_SKILLS_NAME("Invalidate %s name"),
+    INVALID_PERCENTAGE_SKILLS("The %s percentage is out of the rank, try in a rank of 1-100");
 
     private final String MESSAGE_EXCEPTION;
 

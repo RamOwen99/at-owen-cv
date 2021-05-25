@@ -8,7 +8,8 @@ public enum CVfields {
     COUNTRY("Country"),
     EMAIL("Email"),
     PHONE_NUMBER("Phone number"),
-    ;
+    TECHNICAL_SKILL("Technical skill"),
+    LANGUAGE_SKILL("Language skill");
 
     private final String FIELD_NAME;
 
