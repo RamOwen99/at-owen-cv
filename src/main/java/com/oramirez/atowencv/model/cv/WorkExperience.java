@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Data
@@ -16,4 +17,20 @@ public class WorkExperience {
     private Date to;
     private Boolean current;
     private String description;
+
+    public String getFrom() {
+        if (this.from == null) {
+            return null;
+        }
+        String simpleDateFormat = new SimpleDateFormat("MMMM YYYY").format(this.from);
+        return simpleDateFormat;
+    }
+
+    public String getTo() {
+        if(this.to == null) {
+            return null;
+        }
+        String simpleDateFormat = new SimpleDateFormat("MMMM YYYY").format(this.to);
+        return simpleDateFormat;
+    }
 }
