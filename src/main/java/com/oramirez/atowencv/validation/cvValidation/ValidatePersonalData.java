@@ -1,4 +1,4 @@
-package com.oramirez.atowencv.validation.personalData;
+package com.oramirez.atowencv.validation.cvValidation;
 
 import com.oramirez.atowencv.exception.BadRequestException;
 import com.oramirez.atowencv.model.cv.CVmodel;

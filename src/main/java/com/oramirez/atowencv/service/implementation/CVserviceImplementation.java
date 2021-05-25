@@ -5,9 +5,10 @@ import com.oramirez.atowencv.model.cv.CVmodel;
 import com.oramirez.atowencv.model.response.PostResponse;
 import com.oramirez.atowencv.repository.CVrepository;
 import com.oramirez.atowencv.service.CVservice;
-import com.oramirez.atowencv.validation.personalData.ValidatePersonalData;
+import com.oramirez.atowencv.validation.cvValidation.CVvalidations;
+import com.oramirez.atowencv.validation.cvValidation.ValidatePersonalData;
+import com.oramirez.atowencv.validation.cvValidation.ValidateSkillsLanguages;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,7 +24,7 @@ public class CVserviceImplementation implements CVservice {
     private CVrepository cVrepository;
 
     @Autowired
-    private ValidatePersonalData validatePersonalData;
+    private CVvalidations cVvalidations;
 
     @Override
     public List<CVmodel> getAllCVs() {
@@ -45,7 +46,7 @@ public class CVserviceImplementation implements CVservice {
 
     @Override
     public PostResponse createNewCV(CVmodel request) {
-        validatePersonalData.validate(request);
+        cVvalidations.validate(request);
         CVmodel saveNewCV = cVrepository.save(request);
         return new PostResponse(saveNewCV.getId());
     }
@@ -70,6 +71,7 @@ public class CVserviceImplementation implements CVservice {
             updatedCV.setChallenges(cv.getChallenges());
             updatedCV.setSocialMedia(cv.getSocialMedia());
             updatedCV.setConfig(cv.getConfig());
+            cVvalidations.validate(updatedCV);
             return cVrepository.save(updatedCV);
         }
         throw new CVnotFound(
