@@ -9,7 +9,15 @@ public enum CVfields {
     EMAIL("Email"),
     PHONE_NUMBER("Phone number"),
     TECHNICAL_SKILL("Technical skill"),
-    LANGUAGE_SKILL("Language skill");
+    LANGUAGE_SKILL("Language skill"),
+    TITLE_WORK("Title work"),
+    COMPANY_NAME("Company name"),
+    FROM_DATE("From date"),
+    TO_DATE("To date"),
+    INSTITUTE("Institute"),
+    CAREER("Career"),
+    DEGREE("Degree");
+
 
     private final String FIELD_NAME;
 
