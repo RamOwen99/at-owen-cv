@@ -14,9 +14,13 @@ public class CVvalidations implements Validate<CVmodel> {
     @Autowired
     private ValidateSkillsLanguages validateSkillsLanguages;
 
+    @Autowired
+    private ValidateWorkExp validateWorkExp;
+
     @Override
     public void validate(CVmodel currentCV) {
         validatePersonalData.validate(currentCV);
         validateSkillsLanguages.validate(currentCV);
+        validateWorkExp.validate(currentCV);
     }
 }
