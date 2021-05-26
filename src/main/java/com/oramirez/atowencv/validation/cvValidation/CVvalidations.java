@@ -17,10 +17,14 @@ public class CVvalidations implements Validate<CVmodel> {
     @Autowired
     private ValidateWorkExp validateWorkExp;
 
+    @Autowired
+    private ValidateEducation validateEducation;
+
     @Override
     public void validate(CVmodel currentCV) {
         validatePersonalData.validate(currentCV);
         validateSkillsLanguages.validate(currentCV);
         validateWorkExp.validate(currentCV);
+        validateEducation.validate(currentCV);
     }
 }
