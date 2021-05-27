@@ -10,8 +10,9 @@ public class IndexController {
 
     @GetMapping
     public String indexController() {
-        return "<h1 style=\"margin-top: 3.125rem; font-family: arial; text-align: center;\">Welcome to Owen's cv API. " +
-                "Go to <a href=#>/at-owen-cv</a> to start</h1>";
+        return "<h1 style=\"margin-top: 3.125rem; font-family: arial; text-align: center;\">" +
+                    "Welcome to Owen's cv API. " + "Go to <a href=#>/at-owen-cv/cvs</a> to start" +
+                "</h1>";
     }
 
 }
