@@ -75,18 +75,9 @@ public class ValidateEducation implements Validate<CVmodel> {
             }
         }
         for(Education education : educationList) {
-            if(!isValidField(education.getTo())) {
-                throw new BadRequestException(
-                    String.format(
-                        INVALID_FIELD.getMessageException(),
-                        TO_DATE.getFieldName()
-                    ) +
-                    " in " + education.getCareer()
-                );
+            if(education.getTo() != null) {
+                isValidFromToDate(education.getTo(), education.getFrom(), education.getCareer());
             }
-        }
-        for(Education education : educationList) {
-            isValidFromToDate(education.getTo(), education.getFrom(), education.getCareer());
         }
     }
 }

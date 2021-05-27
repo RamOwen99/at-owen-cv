@@ -61,19 +61,10 @@ public class ValidateWorkExp  implements Validate<CVmodel> {
                 );
             }
         }
-        for (WorkExperience work : workExperience) {
-            if(!isValidField(work.getTo())) {
-                throw new BadRequestException(
-                    String.format(
-                        INVALID_FIELD.getMessageException(),
-                        TO_DATE.getFieldName()
-                    ) +
-                    " in " + work.getCompany()
-                );
-            }
-        }
         for(WorkExperience work : workExperience) {
-            isValidFromToDate(work.getTo(), work.getFrom(), work.getCompany());
+            if(work.getTo() != null) {
+                isValidFromToDate(work.getTo(), work.getFrom(), work.getCompany());
+            }
         }
     }
 
